@@ -3,7 +3,8 @@ h1 {
     text-align: center;
     font-family: 'Poppins' , sans-serif;
     padding-top:30px;
-    font-weight:bolder ;
+    font-weight:900;
+     
 }
 
 
@@ -12,7 +13,9 @@ h1 {
     flex-direction: row;
     justify-content: center;
     gap: 47px;
-    margin-top: -15px
+    margin-top: -15px;
+    font-weight: 400;
+
 }
 .box {
     display:flex;
@@ -23,33 +26,33 @@ h1 {
     
 }
 #box1 {
-    width: 100px;
-    height: 100px;
+    width: 105px;
+    height: 105px;
     border: 3px solid black;
     background-color: #EA9999;
     caption-side: bottom
 }
 #box2 {
-    width: 100px;
-    height: 100px;
+    width: 105px;
+    height: 105px;
     border: 3px solid black;
     background-color: #FACB9C
 }
 #box3 {
-    width: 100px;
-    height: 100px;
+    width: 105px;
+    height: 105px;
     border: 3px solid black;
     background-color: #FFE59A
 }
 #box4 {
-    width: 100px;
-    height: 100px;
+    width: 105px;
+    height: 105px;
     border: 3px solid black;
     background-color:#B6D7A8
 }
 #box5 {
-    width: 100px;
-    height: 100px;
+    width: 105px;
+    height: 105px;
     border: 3px solid black;
     background-color: #a4c4ca
 }
