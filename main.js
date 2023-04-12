@@ -1,34 +1,56 @@
 var newPaletteButton = document.querySelector("#new-palette-button");
-var hexValues = [];
-
 var boxes = document.querySelector(".box");
 
-var randomHexCode;
-// var hexValues = [];
+var hexValues = []
+var randomHexCodes = [];
 var currentPalette = []; // this will have x5 of our new hexcodes
 
 window.addEventListener('load', function() {
-    createHexCode(6)
+    createNewPalette();
 });
 
 newPaletteButton.addEventListener('click', function() {
-    createHexCode(6);
+    // createHexString();
+    console.log(hexValues)
+    createNewPalette();
 });
   
-function createHexCode(size) {
+function createHexCode() {
     var hexCharacters = ["A", "B", "C", "D", "E", "F", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-    for (let i = 0; i < size; i++) {
-        hexValues.push(hexCharacters[Math.floor(Math.random() * hexCharacters.length)]);
-      }
-      return `#${hexValues.join('')}`;
+    for (var i = 0; i < 6; i++) {
+        hexValues.push(hexCharacters[Math.floor(Math.random() * hexCharacters.length)])
+      }  return `#${hexValues.join('')}`;
     };
 
+function createNewPalette() {
+    newPalette = [];
+    for (var i = 0; i < 5; i++) {
+        newPalette.push(createHexCode());
+    }
+        currentPalette = newPalette;
+        console.log(newPalette)
+      }
 
 
 
 
-  // function to create random hex code
-    //within that function we will return the code 
+    // need to push the joined hex values into a new array, then repeat to made more hex codes ...? 
 
-    /// use the inner.HTML & replace the hardcoded .caption class with the newly generated hex codes 
-    //
+
+    // for (var i = 0; i < currentPalette.length; i++) {
+    //     if (currentPalette.length < 5) {
+    //         createHexCode(6) 
+
+    // }
+
+    // }
+
+
+
+
+    // function displayNewPalette() {
+    //     for (var i = 0; i < currentPalette.length; i++) {
+    //       boxes[i].style.backgroundColor = currentPalette[i];
+    //     };
+    //   };
+      
