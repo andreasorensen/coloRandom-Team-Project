@@ -1,67 +1,81 @@
-* {
-  font-family: 'Poppins' , sans-serif;
-}
 
 h1 {
-  font-size: 60px;
-  text-align: center;
-  padding-top: 30px;
-  font-weight: 900;
+    font-size: 60px;
+    text-align: center;
+    font-family: 'Poppins' , sans-serif;
+    padding-top:30px;
+    font-weight:900;
+     
 }
+
 
 .caption {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 47px;
-  margin-top: -15px;
-  font-weight: 400;
-  padding-bottom: 50px;
-}
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 47px;
+    margin-top: -15px;
+    font-weight: 400;
 
+}
 .box {
-  display:flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 10px;
-  
-  
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    
+    
 }
 #box1 {
-  width: 105px;
-  height: 105px;
-  border: 3px solid black;
-  background-color: #EA9999;
-  caption-side: bottom
+    width: 105px;
+    height: 105px;
+    border: 3px solid black;
+    background-color: #EA9999;
+    caption-side: bottom
 }
 #box2 {
-  width: 105px;
-  height: 105px;
-  border: 3px solid black;
-  background-color: #FACB9C
+    width: 105px;
+    height: 105px;
+    border: 3px solid black;
+    background-color: #FACB9C
 }
 #box3 {
-  width: 105px;
-  height: 105px;
-  border: 3px solid black;
-  background-color: #FFE59A
+    width: 105px;
+    height: 105px;
+    border: 3px solid black;
+    background-color: #FFE59A
 }
 #box4 {
-  width: 105px;
-  height: 105px;
-  border: 3px solid black;
-  background-color:#B6D7A8
+    width: 105px;
+    height: 105px;
+    border: 3px solid black;
+    background-color:#B6D7A8
 }
 #box5 {
-  width: 105px;
-  height: 105px;
-  border: 3px solid black;
-  background-color: #a4c4ca
+    width: 105px;
+    height: 105px;
+    border: 3px solid black;
+    background-color: #a4c4ca
 }
 
 html {
-  background: #E7F1F1;
+    background: #E7F1F1;
+    font-family: 'Poppins' , sans-serif;
 }
+
+
+.box img{
+height: 20px;
+width:20px;
+padding-top: 80px;
+padding-left: 80px
+
+}
+
+.hidden{
+    display: none;
+}
+
 
 .new-palette-button {
   margin: auto;
@@ -78,3 +92,5 @@ html {
   align-items: center;
   font-weight: 300;
 };
+
+
