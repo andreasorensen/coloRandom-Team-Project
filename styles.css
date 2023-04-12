@@ -1,87 +1,80 @@
-*{
-    font-family: 'Poppins', sans-serif;
-    }
-
-body {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    background-color: #E7F1F1;
-  }
-  
-  .main-section {
-    display: flex;
-    flex-direction: column;
-    width: 75%;
-    height: 100vh;
-    align-items: center;
-    justify-content: space-evenly;
-  }
-  
-  .main-color-display {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    height: 40%;
-    align-items: center;
-  }
-  
-  .color-box {
-    border: 2px solid;
-    height: 120px;
-    width: 120px;
-    cursor: pointer;
-  }
-  
-  .color-hex-lock {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .lock-status {
-    background: none;
-    border: none;
-    font-size: 1.5em;
-  }
-  
-  .hex-lock {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-items: center;
-  }
-  
-.hidden {
-    display: none;
-    }
-    
-.unlock-icon,
-.lock-icon {
-    height: 20px; 
-    width: auto;
-    padding-left: 5px;
+* {
+  font-family: 'Poppins' , sans-serif;
 }
 
-.button-display {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-  }
+h1 {
+  font-size: 60px;
+  text-align: center;
+  padding-top: 30px;
+  font-weight: 900;
+}
+
+.caption {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 47px;
+  margin-top: -15px;
+  font-weight: 400;
+  padding-bottom: 50px;
+}
+
+.box {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
   
-  .main-page-buttons {
-    height: 47px;
-    width: 100px;
-    border: radius 50px;
-  }
   
-  .saved-palette-section {
-    display: flex;
-    border-left: 2px solid;
-    width: 25%;
-    height: 100vh;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  
+}
+#box1 {
+  width: 105px;
+  height: 105px;
+  border: 3px solid black;
+  background-color: #EA9999;
+  caption-side: bottom
+}
+#box2 {
+  width: 105px;
+  height: 105px;
+  border: 3px solid black;
+  background-color: #FACB9C
+}
+#box3 {
+  width: 105px;
+  height: 105px;
+  border: 3px solid black;
+  background-color: #FFE59A
+}
+#box4 {
+  width: 105px;
+  height: 105px;
+  border: 3px solid black;
+  background-color:#B6D7A8
+}
+#box5 {
+  width: 105px;
+  height: 105px;
+  border: 3px solid black;
+  background-color: #a4c4ca
+}
+
+html {
+  background: #E7F1F1;
+}
+
+.new-palette-button {
+  margin: auto;
+  background-color: black;
+  border-radius: 3px;
+  color: white;
+  border: none;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  width: 140px;
+  height: 25px;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  font-weight: 300;
+};

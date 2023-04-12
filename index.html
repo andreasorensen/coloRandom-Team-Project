@@ -1,75 +1,39 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <!-- <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
-  <title>ColoRandom✨AndreaNatalieParvin </title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;1,100&display=swap" rel="stylesheet">
-</head>
-<body>
-  <div class="main-section">
-    <header class="title">
-      <h1>ColoRandom</h1>
-    </header>
-    <section class="main-color-display">
-      <div class="color-hex-lock" id="section1">
-        <section class="color-box" id="color1"></section>
-        <div class="hex-lock">
-          <p class="hex-value" id="hex1">#EA9999</p>
-          <img class="unlock-icon" data-unlock="0" src="src/unlocked.png" alt="lock icon">
-          <img class="lock-icon hidden" data-lock="0" src="src/locked.png" alt="lock icon">
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <!-- <link href="https://fonts.google.com/specimen/Poppins?query=poppins" rel="stylesheet"> -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <h1>COLORANDOM</h1>
+        <div class="box">
+            <p id="box1"></p>
+            <p id="box2"></p>
+            <p id="box3"></p>
+            <p id="box4"></p>
+            <p id="box5"></p>
         </div>
-      </div>
-      <div class="color-hex-lock" id="section2">
-        <section class="color-box" id="color2"></section>
-        <div class="hex-lock">
-          <p class="hex-value" id="hex2">#FACB9C</p>
-          <img class="unlock-icon" data-unlock="0" src="src/unlocked.png" alt="lock icon">
-          <img class="lock-icon hidden" data-lock="0" src="src/locked.png" alt="lock icon">
+        <div class="caption">
+            <p>#EA9999</p>
+            <p>#FACB9C</p>
+            <p>#FFE59A</p>
+            <p>#B6D7A8</p>
+            <p>#A4C4CA</p>
         </div>
-      </div>
-      <div class="color-hex-lock" id="section3">
-        <section class="color-box" id="color3"></section>
-        <div class="hex-lock">
-          <p class="hex-value" id="hex3">#FFE59A</p>
-          <img class="unlock-icon" data-unlock="0" src="src/unlocked.png" alt="lock icon">
-          <img class="lock-icon hidden" data-lock="0" src="src/locked.png" alt="lock icon">
-        </div>
-      </div>
-      <div class="color-hex-lock" id="section4">
-        <section class="color-box" id="color4"></section>
-        <div class="hex-lock">
-          <p class="hex-value" id="hex4">#B6D7A8</p>
-          <img class="unlock-icon" data-unlock="0" src="src/unlocked.png" alt="lock icon">
-          <img class="lock-icon hidden" data-lock="0" src="src/locked.png" alt="lock icon">
-        </div>
-      </div>
-      <div class="color-hex-lock" id="section5">
-        <section class="color-box" id="color5"></section>
-        <div class="hex-lock">
-          <p class="hex-value" id="hex5">#A4C4CA</p>
-          <img class="unlock-icon" data-unlock="0" src="src/unlocked.png" alt="lock icon">
-          <img class="lock-icon hidden" data-lock="0" src="src/locked.png" alt="lock icon">
-        </div>
-      </div>
-      </section>
-      <section class="button-display">
-        <button class="main-page-buttons" id="new-palette">New Palette</button>
-        <button class="main-page-buttons" id="save-palette">Save Palette</button>
-      </section>
-      <img class="delete-palette hidden" src="src/delete.png" alt="delete icon"/>
-  </div>
-  <div class="saved-palette-section">
-    <h2>Saved Palettes</h2>
-    <section class="saved-palette-display">
-    </section>
-  </div>
-</body>
-<script type='text/javascript' src='main.js'></script>
+        <section class="new-button">
+            <button type="button" class="new-palette-button" id="new-palette-button">New Palette</button>
+        </section>
+        <script type="text/javascript" src="main.js"></script>
+    </body>
 </html>
