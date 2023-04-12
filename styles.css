@@ -1,3 +1,4 @@
+
 h1 {
     font-size: 60px;
     text-align: center;
@@ -74,4 +75,22 @@ padding-left: 80px
 .hidden{
     display: none;
 }
+
+
+.new-palette-button {
+  margin: auto;
+  background-color: black;
+  border-radius: 3px;
+  color: white;
+  border: none;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  width: 140px;
+  height: 25px;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  font-weight: 300;
+};
+
 
