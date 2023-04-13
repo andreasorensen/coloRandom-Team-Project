@@ -2,24 +2,27 @@
 // Variables:
 
 var newPaletteButton = document.querySelector("#new-palette-button");
-//var boxes = document.querySelector(".box");
 var hexCaption = document.querySelectorAll(".caption");
-var boxes = document.querySelectorAll(".box");
-
+var boxes = document.querySelectorAll(".boxes");
 var hexValues = []
 var randomHexCodes = [];
-var currentPalette = []; // this will have x5 of our new hexcodes
+var currentPalette = []; // this will have x5 of our new 
+var lockImgSection = document.querySelector('.box')
+
+
 var hexData = ["A", "B", "C", "D", "E", "F", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 //Event Listeners:
 
 window.addEventListener('load', function() {
-    createNewPalette();
+    newPaletteDisplay() 
 });
+
+lockImgSection.addEventListener('click',toggleLocks)
 
 newPaletteButton.addEventListener('click', function() {
     // createHexString();
-    createNewPalette();
+    newPaletteDisplay()
 });
   
 function createHexCode() {
@@ -40,30 +43,25 @@ function createNewPalette() {
     console.log(newPalette)
 };
 
-function hexCodesCh() {
-  for(var i = 0; i < hexCaption.length; i++) {
-    hexCaption[i].innerText = currentPalette[i];
-  };
-    console.log(hexCodesCh())
-};
+// function hexCodesCh() {
+//   for(var i = 0; i < hexCaption.length; i++) {
+//     hexCaption[i].innerText = currentPalette[i];
+//   };
+//     console.log(hexCodesCh())
+// };
 
-function boxesColorCh() {
-  for (var i =0; i < boxes.length; i++) {
-    boxes[i].style.background =  currentPalette[i]
-  };
+function changeBoxesColors() {
+  
+  for (var i=0; i < boxes.length; i++) {
+    boxes[i].style.backgroundColor = currentPalette[i]
+  }
 };
 
 function newPaletteDisplay() {
   createNewPalette();
-  hexCodesCh();
-  boxesColorCh();
+  // hexCodesCh();
+  changeBoxesColors();
 };
-
-var lockImg = document.querySelector('.box')
-
-
-
-lockImg.addEventListener('click',toggleLocks)
 
 function toggleLocks(event) {
     for (var i = 1; i < 6; i++) {
