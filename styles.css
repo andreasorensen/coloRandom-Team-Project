@@ -1,4 +1,3 @@
-
 h1 {
     font-size: 60px;
     text-align: center;
@@ -95,3 +94,9 @@ padding-left: 80px
   font-weight: 300;
 };
 
+
+.new-palette-button:hover {
+    background-color: darkgray;
+    color: black;
+  }
+  

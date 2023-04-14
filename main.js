@@ -1,39 +1,29 @@
-
 // Variables:
-var newPaletteButton = document.querySelector("#new-palette-button");
-var hexCaption = document.querySelectorAll(".captions");
-var boxes = document.querySelectorAll(".boxes");
-var lockImgSection = document.querySelector('.box')
-var lockedImage = document.querySelector('.locked')
-// var unlockedImage = document.querySelector('.unlocked')
-
 
 var randomHexCodes = [];
-// var currentPalette = [];
 
 var hexData = ["A", "B", "C", "D", "E", "F", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var currentPalette = [];
+var boxes = document.querySelectorAll(".boxes");
+var newPaletteButton = document.querySelector("#new-palette-button");
+var hexCaption = document.querySelectorAll(".captions");
+var boxes = document.querySelector(".boxes");
+var boxContainer = document.querySelector('.box-container');
+var paletteSection = document.querySelector(".color-palettes");
+// var lockImgSection = document.querySelector('.box');
+// var lockedImage = document.querySelector('.locked');
 
 //Event Listeners:
-window.addEventListener('load', function() {
-    newPaletteDisplay() //need alternative fucntion w.out conditional
-});
 
-lockImgSection.addEventListener('click', toggleLocks)
-
-
-newPaletteButton.addEventListener('click', function() {
-    newPaletteDisplay()
+window.addEventListener('load', loadPage);
+newPaletteButton.addEventListener('click', newPaletteDisplay);
+boxes.addEventListener('click', toggleLocks);
+paletteSection.addEventListener("click", function(event) {
+  populateNotLockedPalette(event);
+  toggleLocks(event)
 });
 
 // eventHandlers & functions: 
-
-function createColor() {
-  var color = {
-    hexcode: createHexCode(),
-    isLocked: false
-  }
-  return color;
-}
 
 function createHexCode() {
   var hexCharacters = [];
@@ -42,13 +32,15 @@ function createHexCode() {
   };
   var hexCode = `#${hexCharacters.join('')}`;
   return hexCode
+  };
+
+  function createColor() {
+    var color = {
+      hexcode: createHexCode(),
+      isLocked: false
+    }
+    return color;
   }
-
-function newPaletteDisplay() {
-  createNewPalette();
-  changeBoxesColors();
-
-}
 
 function createNewPalette() {
   var newPalette = [];
@@ -57,8 +49,16 @@ function createNewPalette() {
   } currentPalette = newPalette
 };
 
+function populateNotLockedPalette() {
+  for (var i = 0; i < 5; i++) {
+    if (!currentPalette[i].locked) {
+        currentPalette[i] = createColor();
+    };
+  };
+};
+
 function changeBoxesColors() {
-    for (var i=0; i < currentPalette.length; i++) {
+    for (var i = 0; i < currentPalette.length; i++) {
       if (currentPalette[i].isLocked === false) {
         boxes[i].style.backgroundColor = currentPalette[i].hexcode;
     }
@@ -71,11 +71,41 @@ function changeHexCaptions() {
   };
 };
 
+// function toggleLocks(event) {
+//   for (var i = 1; i < 6; i++) {
+//     if (event.target.parentNode.id === `box${i}`) {
+//       currentPalette[i].locked = !currentPalette[i].locked;
+//       document.getElementById(`locked${i}`).classList.toggle('hidden');
+//       document.getElementById(`unlocked${i}`).classList.toggle('hidden');
+//     }
+//   } 
+// };
+
 function toggleLocks(event) {
-  for (var i = 1; i < 6; i++) {
-    if (event.target.parentNode.id === `box${i}`) {
-    document.getElementById(`locked${i}`).classList.toggle('hidden');
-      document.getElementById(`unlocked${i}`).classList.toggle('hidden');
-    }
+  var targetID = parseInt(event.target.closest(".captions").id);
+
+  if (event.target.classList.contains("locked") && currentPalette[targetID].isLocked) {
+      event.target.src = "assets/locked.png"
+  } else if (event.target.classList.contains("unlocked") && !currentPalette[targetID].isLocked) {
+      event.target.src = "assets/unlocked.png"
   } 
+};
+
+function changeIsLocked(event) {
+  if (event.target.classList.contains("unlocked")) {
+    var targetID = parseInt(event.target.closest(".captions").id);
+    currentPalette[targetID].isLocked = !currentPalette[targetID].isLocked;
+  };
+};
+
+function newPaletteDisplay() {
+  currentPalette = populateNotLockedPalette();
+  changeHexCaptions();
+  changeBoxesColors();
+}
+
+function loadPage() {
+  createNewPalette();
+  changeHexCaptions();
+  changeBoxesColors();
 }
