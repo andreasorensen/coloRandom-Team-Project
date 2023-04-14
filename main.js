@@ -10,9 +10,12 @@ var hexCaption = document.querySelectorAll(".captions");
 var boxContainer = document.querySelector('.box-container');
 var paletteSection = document.querySelector(".color-palettes");
 
+//var images = document.querySelector('.image')
+
 //Event Listeners:
 
 window.addEventListener('load', loadPage);
+
 newPaletteButton.addEventListener('click', newPaletteDisplay);
 // boxes.addEventListener('click', toggleLocks);
 
@@ -48,14 +51,9 @@ function createNewPalette() {
 };
 
 function populateNotLockedPalette() {
-
-  console.log(currentPalette)
-
   for (var i = 0; i < 5; i++) {
+    console.log(currentPalette[i])
     if (!currentPalette[i].isLocked) {
-
-      console.log(currentPalette)
-
         currentPalette[i] = createColor();
     };
   };
@@ -63,10 +61,7 @@ function populateNotLockedPalette() {
 
 function changeBoxesColors() {
     for (var i = 0; i < currentPalette.length; i++) {
-      // if (currentPalette[i].isLocked === false) {
-        //console.log(boxes[i])
         boxes[i].style.backgroundColor = currentPalette[i].hexcode;
-    // }
   } changeHexCaptions()
 };
 
@@ -89,17 +84,17 @@ function changeHexCaptions() {
 function toggleLocks(event) {
 
   //var targetID = parseInt(event.target.closest(".boxes").id);
-  
-  var targetID = event.target.closest(".boxes").id;
+  var targetID = event.target.closest(".boxes").id
 
-  if (event.target.classList.contains('hidden')) {
-    event.target.classList.remove('hidden');
-  }else{
-    event.target.classList.add('hidden');
-  };
+  // if (targetID.contains('hidden')) {
+  //   targetID.remove('hidden');
+  // } else {
+  //   targetID.add('hidden');
+  // };
 
   if (event.target.classList.contains("locked") && currentPalette[targetID].isLocked) {
       event.target.src = "assets/locked.png"
+
   } else if (event.target.classList.contains("unlocked") && !currentPalette[targetID].isLocked) {
       event.target.src = "assets/unlocked.png"
   } 
@@ -107,10 +102,7 @@ function toggleLocks(event) {
 
 function changeIsLocked(event) {
   if (event.target.classList.contains("unlocked")) {
-
     var targetID = parseInt(event.target.closest(".boxes").id);
-    
-    console.log(currentPalette[targetID])
 
     // currentPalette[targetID].isLocked = !currentPalette[targetID].isLocked;
    currentPalette[targetID].isLocked = true;
@@ -119,13 +111,14 @@ function changeIsLocked(event) {
 };
 
 function newPaletteDisplay() {
-  currentPalette = populateNotLockedPalette();
-  changeHexCaptions();
+  // currentPalette = populateNotLockedPalette();
+  populateNotLockedPalette();
+  //changeHexCaptions();
   changeBoxesColors();
 }
 
 function loadPage() {
   createNewPalette();
-  changeHexCaptions();
+  //changeHexCaptions();
   changeBoxesColors();
 }
