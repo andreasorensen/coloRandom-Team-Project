@@ -10,21 +10,29 @@ var hexCaption = document.querySelectorAll(".captions");
 var boxContainer = document.querySelector('.box-container');
 var paletteSection = document.querySelector(".color-palettes");
 
+// boxes.addEventListener('click', )
+
+// function toggleLockImage(event){
+// }
+
 //var images = document.querySelector('.image')
 
 //Event Listeners:
 
 window.addEventListener('load', loadPage);
 
-newPaletteButton.addEventListener('click', newPaletteDisplay);
-// boxes.addEventListener('click', toggleLocks);
+newPaletteButton.addEventListener('click',   populateNotLockedPalette);
 
 paletteSection.addEventListener("click", function(event) {
-  populateNotLockedPalette(event);
   changeIsLocked(event)
 });
 
 // eventHandlers & functions: 
+
+function loadPage() {
+  createNewPalette();
+  changeBoxesColors();
+}
 
 function createHexCode() {
   var hexCharacters = [];
@@ -52,11 +60,10 @@ function createNewPalette() {
 
 function populateNotLockedPalette() {
   for (var i = 0; i < 5; i++) {
-    console.log(currentPalette[i])
     if (!currentPalette[i].isLocked) {
         currentPalette[i] = createColor();
     };
-  };
+  };  changeBoxesColors();
 };
 
 function changeBoxesColors() {
@@ -72,19 +79,31 @@ function changeHexCaptions() {
 };
 
 // function toggleLocks(event) {
-//   for (var i = 1; i < 6; i++) {
-//     if (event.target.parentNode.id === `box${i}`) {
-//       currentPalette[i].locked = !currentPalette[i].locked;
+//   for (var i = 0; i < 6; i++) {
+//     if (event.target.parentNode.id === `${i}`){
 //       document.getElementById(`locked${i}`).classList.toggle('hidden');
 //       document.getElementById(`unlocked${i}`).classList.toggle('hidden');
 //     }
-//   } 
+//   }
 // };
 
-function toggleLocks(event) {
+function changeIsLocked(event) {
+  if (event.target.classList.contains("unlocked")) {
+    var targetID = parseInt(event.target.closest(".boxes").id);
+   currentPalette[targetID].isLocked = true;
+  };
+  // toggleLocks(event.target)
+};
 
-  //var targetID = parseInt(event.target.closest(".boxes").id);
-  var targetID = event.target.closest(".boxes").id
+function toggleLocks(event) {
+    if (event.classList.contains('hidden')) {
+        event.classList.remove('hidden')
+    } else {
+      event.classList.add('hidden')
+    } 
+}
+
+  // var targetID = parseInt(event.target.closest(".boxes").id);
 
   // if (targetID.contains('hidden')) {
   //   targetID.remove('hidden');
@@ -92,33 +111,16 @@ function toggleLocks(event) {
   //   targetID.add('hidden');
   // };
 
-  if (event.target.classList.contains("locked") && currentPalette[targetID].isLocked) {
-      event.target.src = "assets/locked.png"
+  // if (event.target.classList.contains("locked") && currentPalette[targetID].isLocked) {
 
-  } else if (event.target.classList.contains("unlocked") && !currentPalette[targetID].isLocked) {
-      event.target.src = "assets/unlocked.png"
-  } 
-};
+      // event.target.src = "assets/locked.png"
 
-function changeIsLocked(event) {
-  if (event.target.classList.contains("unlocked")) {
-    var targetID = parseInt(event.target.closest(".boxes").id);
+  // } else if (event.target.classList.contains("unlocked") && !currentPalette[targetID].isLocked) {
+  //     event.target.src = "assets/unlocked.png"
+  // } 
+// };
 
-    // currentPalette[targetID].isLocked = !currentPalette[targetID].isLocked;
-   currentPalette[targetID].isLocked = true;
-  };
-  toggleLocks()
-};
-
-function newPaletteDisplay() {
-  // currentPalette = populateNotLockedPalette();
-  populateNotLockedPalette();
-  //changeHexCaptions();
-  changeBoxesColors();
-}
-
-function loadPage() {
-  createNewPalette();
-  //changeHexCaptions();
-  changeBoxesColors();
-}
+// function newPaletteDisplay() {
+//   populateNotLockedPalette();
+//   // changeBoxesColors();
+// }
