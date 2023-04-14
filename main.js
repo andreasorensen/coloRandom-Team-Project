@@ -20,13 +20,10 @@ window.addEventListener('load', function() {
 
 lockImgSection.addEventListener('click', toggleLocks)
 
+
 newPaletteButton.addEventListener('click', function() {
     newPaletteDisplay()
 });
-
-
-
-
 
 // eventHandlers & functions: 
 
@@ -50,6 +47,7 @@ function createHexCode() {
 function newPaletteDisplay() {
   createNewPalette();
   changeBoxesColors();
+
 }
 
 function createNewPalette() {
@@ -64,7 +62,7 @@ function changeBoxesColors() {
       if (currentPalette[i].isLocked === false) {
         boxes[i].style.backgroundColor = currentPalette[i].hexcode;
     }
-  } 
+  } changeHexCaptions()
 };
 
 function changeHexCaptions() {
@@ -81,28 +79,3 @@ function toggleLocks(event) {
     }
   } 
 }
-
-
-// function changeKey(event){
-//   for (var i = 0; i<currentPalette.length; i++) {
-//     if (parseInt(event.target.closest('.unlocked'))) {
-//       currentPalette[i].isLocked = true
-//     } console.log(currentPalette)
-//     console.log(currentPalette[i])
-//   }
-// }
-// function changeKey(event){
-//   console.log(event.target)
-//   for (var i = 1; i < 6; i++) {
-//     if (event.target.parentNode.classList.contains('unlocked')) {
-//     }
-//   }
-// }
-
-// for (var i = 0; i<currentPalette.length; i++) {
-//   if (event.target.getElementById.contains('unlocked')) {
-//   currentPalette[i].isLocked = true
-//   } console.log(currentPalette[i].isLocked)
-//   console.log(currentPalette)
-//   }
-// }
