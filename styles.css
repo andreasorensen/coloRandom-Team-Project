@@ -13,11 +13,13 @@ h1 {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 47px;
+    gap: 50px;
     margin-top: -15px;
     font-weight: 400;
-
+    margin-bottom: 30px;
+    font-size: 15px;
 }
+
 .box {
     display:flex;
     flex-direction: row;
@@ -85,12 +87,11 @@ padding-left: 80px
   border: none;
   border-top-right-radius: 30px;
   border-bottom-left-radius: 30px;
-  width: 140px;
-  height: 25px;
+  width: 150px;
+  height: 30px;
   display: flex;
   justify-content: center; 
   align-items: center;
   font-weight: 300;
 };
-
 
