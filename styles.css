@@ -1,3 +1,4 @@
+
 html {
     background: #E7F1F1;
     font-family: 'Poppins' , sans-serif;
@@ -63,18 +64,16 @@ h1 {
     background-color: #a4c4ca
 }
 
-.box-container img{
+.boxes img{
 height: 20px;
 width:20px;
 padding-top: 80px;
 padding-left: 80px
-
 }
 
 .hidden{
     display: none;
 }
-
 
 .new-palette-button {
   margin: auto;

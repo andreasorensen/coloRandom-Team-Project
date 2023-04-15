@@ -9,25 +9,19 @@ var newPaletteButton = document.querySelector("#new-palette-button");
 var hexCaption = document.querySelectorAll(".captions");
 var boxContainer = document.querySelector('.box-container');
 var paletteSection = document.querySelector(".color-palettes");
-var lockedIcons = document.querySelectorAll('.locked')
 var unlockedIcons = document.querySelectorAll('.unlocked')
-var hiddenIcons = document.querySelectorAll('.hidden')
-
+var lockedIcons = document.querySelectorAll('.hidden')
 
 //Event Listeners:
 
 window.addEventListener('load', loadPage);
 
-// newPaletteButton.addEventListener('click', function(event) {
-//   if (event.target.classList.contains('hidden')) {
-//     currentPalette[i].isLocked=true
-//   } changeNotLockedPalette();
-// })
-  // changeIsLocked);
+newPaletteButton.addEventListener('click', populateNotLockedPalette);
 
-newPaletteButton.addEventListener('click', changeNotLockedPalette)
-
-paletteSection.addEventListener("click", toggleLocks);
+boxContainer.addEventListener("click", function(event) {
+    toggleLocks(event)
+  changeIsLocked(event)
+});
 
 // eventHandlers & functions: 
 
@@ -60,7 +54,7 @@ function createNewPalette() {
   } currentPalette = newPalette
 };
 
-function changeNotLockedPalette() {
+function populateNotLockedPalette() {
   for (var i = 0; i < 5; i++) {
     if (!currentPalette[i].isLocked) {
         currentPalette[i] = createColor();
@@ -68,70 +62,29 @@ function changeNotLockedPalette() {
   };  changeBoxesColors();
 };
 
-function changeIsLocked(event) {
-  if (event.target.classList.contains("unlocked")) {
-    var targetID = parseInt(event.target.closest(".boxes").id);
-   currentPalette[targetID].isLocked = true;
-  };
-  // toggleLocks(event.target)
-};
-
-// function changeIsLocked() {
-//   for (var i=0; i<lockedIcons.length; i++) {
-//     console.log(lockedIcons)
-//     if (lockedIcons.classList.contains('hidden')){
-//       currentPalette[i].isLocked = true;
-//     }
-//   }
-// }
-
 function changeBoxesColors() {
     for (var i = 0; i < currentPalette.length; i++) {
         boxes[i].style.backgroundColor = currentPalette[i].hexcode;
-  } changeHexCaptions()
-};
+        hexCaption[i].innerText = currentPalette[i].hexcode
+    } 
+}
 
-function changeHexCaptions() {
-  for(var i = 0; i < hexCaption.length; i++) {
-    hexCaption[i].innerText = currentPalette[i].hexcode
-  };
+function changeIsLocked(event) {
+    var targetID = parseInt(event.target.closest("div").id);
+  if (event.target.classList.contains("unlocked")) {
+   currentPalette[targetID].isLocked = true;
+  } else {
+    currentPalette[targetID].isLocked = false;
+  }
 };
 
 function toggleLocks(event) {
-  for (var i = 0; i < lockedIcons.length; i++) {    
-    if(event.target.id === lockedIcons[i].id || event.target.id === unlockedIcons[i].id) {
-      lockedIcons[i].classList.toggle('hidden')
-      unlockedIcons[i].classList.toggle('hidden')
+    for (var i = 0; i < lockedIcons.length; i++) {    
+      if(event.target.id === lockedIcons[i].id || event.target.id === unlockedIcons[i].id) {
+        lockedIcons[i].classList.toggle('hidden')
+        unlockedIcons[i].classList.toggle('hidden')
+      }
     }
-  } changeIsLocked()
-}
+  }
 
-// function toggleLocks(event) {
-//   for (var i = 0; i < 6; i++) {
-//     if (event.target.parentNode.id === `${i}`){
-//       document.getElementById(`locked${i}`).classList.toggle('hidden');
-//       document.getElementById(`unlocked${i}`).classList.toggle('hidden');
-//     }
-//   }
-// };
-  // var targetID = parseInt(event.target.closest(".boxes").id);
-
-  // if (targetID.contains('hidden')) {
-  //   targetID.remove('hidden');
-  // } else {
-  //   targetID.add('hidden');
-  // };
-
-  // if (event.target.classList.contains("locked") && currentPalette[targetID].isLocked) {
-
-      // event.target.src = "assets/locked.png"
-
-  // } else if (event.target.classList.contains("unlocked") && !currentPalette[targetID].isLocked) {
-  //     event.target.src = "assets/unlocked.png"
-  // } 
-// };
-
-// function newPaletteDisplay() {
-//   populateNotLockedPalette();
-//   // changeBoxesColors();
-// }
+ 
