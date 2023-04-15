@@ -152,6 +152,11 @@ h3 {
     text-align: center;
     margin-top: 15%;
 }
+/* .h4 { 
+    display: none
+} */
+
+
 
 #saved-palettes {
     font-family: 'Poppins', sans-serif;
@@ -173,10 +178,12 @@ h3 {
 }
 
 .mini-palette {
+    display: flex;
     height: 50px;
     width: 50px;
     margin: 5px;
     border: 3px solid black;
+
 }
 
 .delete {
