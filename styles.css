@@ -71,12 +71,8 @@ padding-top: 80px;
 padding-left: 80px
 }
 
-.hidden{
-    display: none;
-}
-
 .new-palette-button {
-  margin: auto;
+  /* margin: auto;
   background-color: black;
   border-radius: 3px;
   color: white;
@@ -88,12 +84,85 @@ padding-left: 80px
   display: flex;
   justify-content: center; 
   align-items: center;
-  font-weight: 300;
-};
+  font-weight: 300; */
 
-/* 
+  margin-top: 80px;
+  background-color: black;
+  color: white;
+  font-size: 24px;
+  padding: 5px 50px;
+  border-radius: 1px 50px;
+  border-style: none;
+};
+  
 .new-palette-button:hover {
     background-color: darkgray;
     color: black;
   }
-   */
+  
+  #saved-container {
+    border-left: 5px solid black;
+    height: 100%;
+    padding-left: 2%;
+    max-width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  h3 {
+    font-weight: 600;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 15%;
+  }
+  
+  #saved-palettes {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    height: 100vh;
+    width: 400px;
+    margin: 0 75px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  .mini-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%
+  }
+  
+  .mini-palette {
+    height: 50px;
+    width: 50px;
+    margin: 5px;
+    border: 3px solid black;
+  }
+  
+  .delete {
+    height: 30px;
+    padding: 2%;
+  }
+  
+  .delete:hover {
+    height: 40px;
+    padding: 1%;
+  }
+
+  .hidden{
+    display: none;
+}
+/* lock {
+    height: 28px;
+    width: 28px;
+    background: transparent;
+    background-image: url("assets/locked.png");
+    background-size: cover;
+    border: none;
+    margin-bottom: 3px;
+ } */
