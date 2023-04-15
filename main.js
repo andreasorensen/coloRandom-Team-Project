@@ -8,6 +8,15 @@ var boxes = document.querySelectorAll(".boxes");
 var newPaletteButton = document.querySelector("#new-palette-button");
 var hexCaption = document.querySelectorAll(".captions");
 var boxContainer = document.querySelector('.box-container');
+
+
+
+// var savePaletteBtn = document.querySelector('#savePaletteBtn');////////NEWWWWW/////////
+// var savedPalettesContainer = document.querySelector('#saved-palettes');
+// var savedSectionMsg = document.querySelector('h4');
+// var savedContainer = document.querySelector('#saved-container');
+
+
 var paletteSection = document.querySelector(".color-palettes");
 var unlockedIcons = document.querySelectorAll('.unlocked')
 var lockedIcons = document.querySelectorAll('.hidden')
@@ -17,6 +26,13 @@ var lockedIcons = document.querySelectorAll('.hidden')
 window.addEventListener('load', loadPage);
 
 newPaletteButton.addEventListener('click', populateNotLockedPalette);
+
+
+// savePaletteBtn.addEventListener('click', savePalettes); //caught TypeError: Cannot read properties of null (reading 'addEventListener')
+
+// savedPalettesContainer.addEventListener('click', changeSavedDisplay);
+// // savedContainer.addEventListener('click', editPalette);
+
 
 boxContainer.addEventListener("click", function(event) {
     toggleLocks(event)
@@ -87,4 +103,48 @@ function toggleLocks(event) {
     }
   }
 
- 
+  // function displayPalette() {
+  //   createNewPalette();
+  //  // populateNotLockedPalette()
+  //   changeHexCodes();
+  //   changeColorBoxes();
+  // }
+  
+  // function savePalettes() {
+  //   var newPalette = [];
+  //   for (var i = 0; i < currentPalette.length; i++) {
+  //       newPalette.push(currentPalette[i]);
+  //   };
+  //   savedPalettes.push(newPalette);
+  //   displaySavedPalettes();
+  //   populateNotLockedPalette();
+  // };
+  
+  // function showMessage() {
+  //   if (savedPalettesContainer.innerHTML === '') {
+  //       savedPalettesContainer.innerHTML = `<h4>No saved palettes yet!</h4>`;
+  //   }
+  // }
+  // function displaySavedPalettes() {
+  //   savedPalettesContainer.innerHTML = '';
+  //   for (var i = 0; i < savedPalettes.length; i++) {
+  //       savedPalettesContainer.innerHTML += `
+  //       <section class="mini-container" id="${i}">
+  //           <section class="mini-palette" style="background-color: ${savedPalettes[i][0].code}"></section>
+  //           <section class="mini-palette" style="background-color: ${savedPalettes[i][1].code}"></section>
+  //           <section class="mini-palette" style="background-color: ${savedPalettes[i][2].code}"></section>
+  //           <section class="mini-palette" style="background-color: ${savedPalettes[i][3].code}"></section>
+  //           <section class="mini-palette" style="background-color: ${savedPalettes[i][4].code}"></section>
+  //           <img class="delete" data-index-number="${i}" src="./icons/delete.png">
+  //       </section>
+  //       `;
+  //   };
+  //   savedSectionMsg.classList.add('hidden');
+  // };
+  
+  
+  // function deletePalette(e) {
+  //   if (e.target.className === 'delete') {
+  //       savedPalettes.splice(e.target.dataset.indexNumber, 1);
+  //   };
+  };
