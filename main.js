@@ -1,38 +1,33 @@
-
 // Variables:
-var newPaletteButton = document.querySelector("#new-palette-button");
-var hexCaption = document.querySelectorAll(".captions");
-var boxes = document.querySelectorAll(".boxes");
-var lockImgSection = document.querySelector('.box')
-var lockedImage = document.querySelector('.locked')
-// var unlockedImage = document.querySelector('.unlocked')
-
 
 var randomHexCodes = [];
-// var currentPalette = [];
 
 var hexData = ["A", "B", "C", "D", "E", "F", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var currentPalette = [];
+var boxes = document.querySelectorAll(".boxes");
+var newPaletteButton = document.querySelector("#new-palette-button");
+var hexCaption = document.querySelectorAll(".captions");
+var boxContainer = document.querySelector('.box-container');
+var paletteSection = document.querySelector(".color-palettes");
+var unlockedIcons = document.querySelectorAll('.unlocked')
+var lockedIcons = document.querySelectorAll('.hidden')
 
 //Event Listeners:
-window.addEventListener('load', function() {
-    newPaletteDisplay() //need alternative fucntion w.out conditional
-});
 
-lockImgSection.addEventListener('click', toggleLocks)
+window.addEventListener('load', loadPage);
 
+newPaletteButton.addEventListener('click', populateNotLockedPalette);
 
-newPaletteButton.addEventListener('click', function() {
-    newPaletteDisplay()
+boxContainer.addEventListener("click", function(event) {
+    toggleLocks(event)
+  changeIsLocked(event)
 });
 
 // eventHandlers & functions: 
 
-function createColor() {
-  var color = {
-    hexcode: createHexCode(),
-    isLocked: false
-  }
-  return color;
+function loadPage() {
+  createNewPalette();
+  changeBoxesColors();
 }
 
 function createHexCode() {
@@ -42,13 +37,15 @@ function createHexCode() {
   };
   var hexCode = `#${hexCharacters.join('')}`;
   return hexCode
+  };
+
+  function createColor() {
+    var color = {
+      hexcode: createHexCode(),
+      isLocked: false
+    }
+    return color;
   }
-
-function newPaletteDisplay() {
-  createNewPalette();
-  changeBoxesColors();
-
-}
 
 function createNewPalette() {
   var newPalette = [];
@@ -57,25 +54,37 @@ function createNewPalette() {
   } currentPalette = newPalette
 };
 
-function changeBoxesColors() {
-    for (var i=0; i < currentPalette.length; i++) {
-      if (currentPalette[i].isLocked === false) {
-        boxes[i].style.backgroundColor = currentPalette[i].hexcode;
-    }
-  } changeHexCaptions()
+function populateNotLockedPalette() {
+  for (var i = 0; i < 5; i++) {
+    if (!currentPalette[i].isLocked) {
+        currentPalette[i] = createColor();
+    };
+  };  changeBoxesColors();
 };
 
-function changeHexCaptions() {
-  for(var i = 0; i < hexCaption.length; i++) {
-    hexCaption[i].innerText = currentPalette[i].hexcode
-  };
+function changeBoxesColors() {
+    for (var i = 0; i < currentPalette.length; i++) {
+        boxes[i].style.backgroundColor = currentPalette[i].hexcode;
+        hexCaption[i].innerText = currentPalette[i].hexcode
+    } 
+}
+
+function changeIsLocked(event) {
+    var targetID = parseInt(event.target.closest("div").id);
+  if (event.target.classList.contains("unlocked")) {
+   currentPalette[targetID].isLocked = true;
+  } else {
+    currentPalette[targetID].isLocked = false;
+  }
 };
 
 function toggleLocks(event) {
-  for (var i = 1; i < 6; i++) {
-    if (event.target.parentNode.id === `box${i}`) {
-    document.getElementById(`locked${i}`).classList.toggle('hidden');
-      document.getElementById(`unlocked${i}`).classList.toggle('hidden');
+    for (var i = 0; i < lockedIcons.length; i++) {    
+      if(event.target.id === lockedIcons[i].id || event.target.id === unlockedIcons[i].id) {
+        lockedIcons[i].classList.toggle('hidden')
+        unlockedIcons[i].classList.toggle('hidden')
+      }
     }
-  } 
-}
+  }
+
+ 
