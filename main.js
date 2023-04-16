@@ -4,30 +4,43 @@ var randomHexCodes = [];
 
 var hexData = ["A", "B", "C", "D", "E", "F", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var currentPalette = [];
+var savedPalettes = [];
+
 var boxes = document.querySelectorAll(".boxes");
 var newPaletteButton = document.querySelector("#new-palette-button");
 var hexCaption = document.querySelectorAll(".captions");
 var boxContainer = document.querySelector('.box-container');
-var paletteSection = document.querySelector(".color-palettes");
-var lockedIcons = document.querySelectorAll('.locked')
-var unlockedIcons = document.querySelectorAll('.unlocked')
-var hiddenIcons = document.querySelectorAll('.hidden')
 
+
+
+var savePaletteBtn = document.querySelector('#save-palette-button');
+var savedPalettesContainer = document.querySelector('#saved-palettes');
+var savedSectionMsg = document.querySelector('h4');
+
+
+
+var paletteSection = document.querySelector(".color-palettes");
+var unlockedIcons = document.querySelectorAll('.unlocked')
+var lockedIcons = document.querySelectorAll('.locked')
 
 //Event Listeners:
 
 window.addEventListener('load', loadPage);
 
-// newPaletteButton.addEventListener('click', function(event) {
-//   if (event.target.classList.contains('hidden')) {
-//     currentPalette[i].isLocked=true
-//   } changeNotLockedPalette();
-// })
-  // changeIsLocked);
 
-newPaletteButton.addEventListener('click', changeNotLockedPalette)
+newPaletteButton.addEventListener('click', populateNotLockedPalette);
 
-paletteSection.addEventListener("click", toggleLocks);
+savePaletteBtn.addEventListener('click', savePalettes); //caught TypeError: Cannot read properties of null (reading 'addEventListener')
+
+// savedPalettesContainer.addEventListener('click', changeSavedDisplay);
+// savedContainer.addEventListener('click', editPalette);
+
+
+boxContainer.addEventListener("click", function(event) {
+    toggleLocks(event)
+  changeIsLocked(event)
+});
+
 
 // eventHandlers & functions: 
 
@@ -48,7 +61,8 @@ function createHexCode() {
   function createColor() {
     var color = {
       hexcode: createHexCode(),
-      isLocked: false
+      isLocked: false,
+      id:Date.now()
     }
     return color;
   }
@@ -60,7 +74,8 @@ function createNewPalette() {
   } currentPalette = newPalette
 };
 
-function changeNotLockedPalette() {
+
+function populateNotLockedPalette() {
   for (var i = 0; i < 5; i++) {
     if (!currentPalette[i].isLocked) {
         currentPalette[i] = createColor();
@@ -69,33 +84,22 @@ function changeNotLockedPalette() {
 };
 
 function changeIsLocked(event) {
+    var targetID = parseInt(event.target.closest("div").id);
+    console.log(parseInt(event.target.closest("div").id))
   if (event.target.classList.contains("unlocked")) {
-    var targetID = parseInt(event.target.closest(".boxes").id);
    currentPalette[targetID].isLocked = true;
-  };
-  // toggleLocks(event.target)
+  } else {
+    currentPalette[targetID].isLocked = false;
+  }
 };
-
-// function changeIsLocked() {
-//   for (var i=0; i<lockedIcons.length; i++) {
-//     console.log(lockedIcons)
-//     if (lockedIcons.classList.contains('hidden')){
-//       currentPalette[i].isLocked = true;
-//     }
-//   }
-// }
 
 function changeBoxesColors() {
     for (var i = 0; i < currentPalette.length; i++) {
         boxes[i].style.backgroundColor = currentPalette[i].hexcode;
-  } changeHexCaptions()
-};
+        hexCaption[i].innerText = currentPalette[i].hexcode
+    } 
+}
 
-function changeHexCaptions() {
-  for(var i = 0; i < hexCaption.length; i++) {
-    hexCaption[i].innerText = currentPalette[i].hexcode
-  };
-};
 
 function toggleLocks(event) {
   for (var i = 0; i < lockedIcons.length; i++) {    
@@ -106,32 +110,40 @@ function toggleLocks(event) {
   } changeIsLocked()
 }
 
-// function toggleLocks(event) {
-//   for (var i = 0; i < 6; i++) {
-//     if (event.target.parentNode.id === `${i}`){
-//       document.getElementById(`locked${i}`).classList.toggle('hidden');
-//       document.getElementById(`unlocked${i}`).classList.toggle('hidden');
-//     }
-//   }
-// };
-  // var targetID = parseInt(event.target.closest(".boxes").id);
+  
+ function savePalettes() {
+    // var savedPalettes = [];
+    // for (var i = 0; i < currentPalette.length; i++) {
+        savedPalettes.push(currentPalette);
+    // };
+    displaySavedPalettes();
+    populateNotLockedPalette();
+  };
+  
 
-  // if (targetID.contains('hidden')) {
-  //   targetID.remove('hidden');
+  function displaySavedPalettes() {
+    savedPalettesContainer.innerHTML = ''
+  // if (savedPalettes.length == 0){
+  //   savedSectionMsg.classList.remove('hidden')
   // } else {
-  //   targetID.add('hidden');
+        savedPalettesContainer.innerHTML += `
+        <section class="mini-container" >
+            <section class="mini-palette" style="background-color: ${currentPalette[0].hexcode}"></section>
+            <section class="mini-palette" style="background-color: ${currentPalette[1].hexcode}"></section>
+            <section class="mini-palette" style="background-color: ${currentPalette[2].hexcode}"></section>
+            <section class="mini-palette" style="background-color: ${currentPalette[3].hexcode}"></section>
+            <section class="mini-palette" style="background-color: ${currentPalette[4].hexcode}"></section>
+            <img class="delete" id="${currentPalette.id}" src="src/delete.png">
+        </section>
+        `
+    // }
+    // };
+    // savedSectionMsg.classList.add('hidden');
+  };
+  
+  
+  // function deletePalette(e) {
+  //   if (e.target.className === 'delete') {
+  //       savedPalettes.splice(e.target.dataset.indexNumber, 1);
+  //   };
   // };
-
-  // if (event.target.classList.contains("locked") && currentPalette[targetID].isLocked) {
-
-      // event.target.src = "assets/locked.png"
-
-  // } else if (event.target.classList.contains("unlocked") && !currentPalette[targetID].isLocked) {
-  //     event.target.src = "assets/unlocked.png"
-  // } 
-// };
-
-// function newPaletteDisplay() {
-//   populateNotLockedPalette();
-//   // changeBoxesColors();
-// }
