@@ -134,11 +134,11 @@ function toggleLocks(event) {
       for (var i=0; i<savedPalettes.length; i++){
           savedPalettesContainer.innerHTML += `
             <section class="mini-container" id=${savedPalettes[i].id}>
-                <section class="mini-palette" style="background-color: ${currentPalette[0].hexcode}"></section>
-                <section class="mini-palette" style="background-color: ${currentPalette[1].hexcode}"></section>
-                <section class="mini-palette" style="background-color: ${currentPalette[2].hexcode}"></section>
-                <section class="mini-palette" style="background-color: ${currentPalette[3].hexcode}"></section>
-                <section class="mini-palette" style="background-color: ${currentPalette[4].hexcode}"></section>
+                <section class="mini-palette" style="background-color: ${savedPalettes[i].box1.hexcode}"></section>
+                <section class="mini-palette" style="background-color: ${savedPalettes[i].box2.hexcode}"></section>
+                <section class="mini-palette" style="background-color: ${savedPalettes[i].box3.hexcode}"></section>
+                <section class="mini-palette" style="background-color: ${savedPalettes[i].box4.hexcode}"></section>
+                <section class="mini-palette" style="background-color: ${savedPalettes[i].box5.hexcode}"></section>
                 <img class="delete" src="src/delete.png" alt="delete-cross">
             </section>
             `
