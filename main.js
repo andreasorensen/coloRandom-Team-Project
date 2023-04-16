@@ -1,5 +1,4 @@
 // Variables:
-
 var randomHexCodes = [];
 var hexData = ["A", "B", "C", "D", "E", "F", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var currentPalette = [];
@@ -21,11 +20,14 @@ var savedPalettesContainer = document.querySelector('#saved-palettes');
 var savedSectionMsg = document.querySelector('h4');
 var paletteSection = document.querySelector(".color-palettes");
 
+
 //Event Listeners:
 
 window.addEventListener('load', loadPage);
+
 newPaletteButton.addEventListener('click', populateNotLockedPalette);
 savePaletteBtn.addEventListener('click', savePalettes);
+
 
 savedPalettesContainer.addEventListener('click', function(event){
   if (event.target.classList.contains('delete')) {
@@ -93,6 +95,14 @@ function changeIsLocked(event) {
   }
 };
 
+function changeBoxesColors() {
+    for (var i = 0; i < currentPalette.length; i++) {
+        boxes[i].style.backgroundColor = currentPalette[i].hexcode;
+        hexCaption[i].innerText = currentPalette[i].hexcode
+    } 
+}
+
+
 function toggleLocks(event) {
     for (var i = 0; i < lockedIcons.length; i++) {
       if(event.target.id === lockedIcons[i].id || event.target.id === unlockedIcons[i].id) {
@@ -144,3 +154,4 @@ function deletePalette(event){
   }
   displaySavedPalettes()
 }  
+
