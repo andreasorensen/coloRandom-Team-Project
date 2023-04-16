@@ -33,13 +33,9 @@ savedPalettesContainer.addEventListener('click', function(event){
   }
 });
 
-
-
 boxContainer.addEventListener("click", function(event) {
-  // if (event.target.classList.contains('locked') || event.target.classList.contains('unlocked')) {
     toggleLocks(event)
     changeIsLocked(event)
-  // }
 });
 
 // eventHandlers & functions:
@@ -148,6 +144,3 @@ function deletePalette(event){
   }
   displaySavedPalettes()
 }  
-
-
-// why is it repeating / adding more when I click the delete (only when there are more than one elements in the savedPalettes array)
