@@ -11,15 +11,14 @@ var newPaletteButton = document.querySelector("#new-palette-button");
 var hexCaption = document.querySelectorAll(".captions");
 var boxContainer = document.querySelector('.box-container');
 
-
-
 var savePaletteBtn = document.querySelector('#save-palette-button');
 var savedPalettesContainer = document.querySelector('#saved-palettes');
 var savedSectionMsg = document.querySelector('h4');
-
-
-
 var paletteSection = document.querySelector(".color-palettes");
+
+savePaletteBtn.addEventListener('click', savePalettes);
+savedPalettesContainer.addEventListener('click', deletePalette);
+
 var unlockedIcons = document.querySelectorAll('.unlocked')
 var lockedIcons = document.querySelectorAll('.locked')
 
@@ -151,3 +150,73 @@ function toggleLocks(event) {
   //       savedPalettes.splice(e.target.dataset.indexNumber, 1);
   //   };
   // };
+
+  // function deleteSavedPalette(event) {
+  //   var targetDeleteID = event.target.id
+  //   var targetDeleteParent = event.target.parentElement
+  //   for (var i = 0; i < savedPalettes.length; i++) {
+  //     if (targetDeleteID === "deleteButton" && savedPalettes[i].ID.toString() === targetDeleteParent.id) {
+  //       savedPalettes.splice(i, 1)
+  //     }
+  //   }
+  // }
+
+//   function deleteSavedPalette(event) {
+//     if(event.target.tagName === 'IMG') {
+//         var clickedPaletteId = event.target.parentElement.id;
+//         for (var i = 0; i < savedPalettes.length; i++) {
+//             if (savedPalettes[i].id == clickedPaletteId) {
+//                 savedPalettes.splice(i, 1);
+//                 break;
+//             }
+//         }
+//         displaySavedPalettes();
+//     }
+// }
+
+
+// function deletePalette(index){
+//   console.log(savedPalettes[index])
+//   savedPalettes.splice(index, 1)
+//   displayMinis()
+// };
+
+function savePalettes() {
+  var savedPalette = {
+    box1: currentPalette[0],
+    box2: currentPalette[1],
+    box3: currentPalette[2],
+    box4: currentPalette[3],
+    box5: currentPalette[4],
+    id: Math.floor(Math.random() * 1000)
+   }; 
+  savedPalettes.push(savedPalette);
+  displaySavedPalettes();
+};
+
+function displaySavedPalettes() {
+  savedSectionMsg.innerText = ''
+  // for (var i=0; i=savedPalettes.length; i++) {
+      savedPalettesContainer.innerHTML += `
+      <section class="mini-container">
+          <section class="mini-palette" style="background-color: ${currentPalette[0].hexcode}"></section>
+          <section class="mini-palette" style="background-color: ${currentPalette[1].hexcode}"></section>
+          <section class="mini-palette" style="background-color: ${currentPalette[2].hexcode}"></section>
+          <section class="mini-palette" style="background-color: ${currentPalette[3].hexcode}"></section>
+          <section class="mini-palette" style="background-color: ${currentPalette[4].hexcode}"></section>
+          <img class="delete" id="${currentPalette.id}" src="src/delete.png">
+      </section>
+      `
+  // }
+};
+
+function deletePalette(event){
+console.log('savedPalettes:', savedPalettes)
+console.log('event.target.id:', parseInt(event.target.id))
+// for (var i=0; i<savedPalettes.length; i++){
+  if (parseInt(event.target.id) === savedPalettes.id) {
+    savedPalettes.splice(i, 1)
+  }
+// event.target.id is coming back as undefined
+// (parseInt(event.target.id)) is coming back as NaN
+}
