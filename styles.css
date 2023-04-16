@@ -31,42 +31,41 @@ h1 {
 }
 .boxes {
     border: 3px solid black;
+    width: 105px;
+    height: 105px;
+    caption-side: bottom;
 }
 #0 {
-    width: 105px;
-    height: 105px;
     background-color: #EA9999;
-    caption-side: bottom
 }
+
 #1 {
-    width: 105px;
-    height: 105px;
     background-color: #FACB9C
 }
+
 #2 {
-    width: 105px;
-    height: 105px;
     background-color: #FFE59A
 }
+
 #3 {
-    width: 105px;
-    height: 105px;
     background-color:#B6D7A8
 }
+
 #4 {
-    width: 105px;
-    height: 105px;
     background-color: #A4C4CA
 }
+
 .boxes img{
 height: 20px;
 width:20px;
 padding-top: 80px;
 padding-left: 80px
 }
+
 .hidden{
     display: none;
 }
+
 .new-palette-button {
   margin: auto;
   background-color: black;
@@ -84,6 +83,7 @@ padding-left: 80px
   display: inline;
   margin-right: -40px
 }
+
 .save-palette-button {
     margin: auto;
     background-color: black;
@@ -132,7 +132,6 @@ h3 {
     display: none
 } */
 #saved-palettes {
-    font-family: 'Poppins', sans-serif;
     text-align: center;
     height: 100vh;
     width: 400px;

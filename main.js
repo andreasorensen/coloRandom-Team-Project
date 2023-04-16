@@ -3,7 +3,6 @@
 var randomHexCodes = [];
 var hexData = ["A", "B", "C", "D", "E", "F", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var currentPalette = [];
-
 var savedPalettes = [];
 
 var boxes = document.querySelectorAll(".boxes");
@@ -16,25 +15,35 @@ var savedSectionMsg = document.querySelector('h4');
 var paletteSection = document.querySelector(".color-palettes");
 var unlockedIcons = document.querySelectorAll('.unlocked');
 var lockedIcons = document.querySelectorAll('.locked');
+var savedPalettes = [];
+var savePaletteBtn = document.querySelector('#save-palette-button');
+var savedPalettesContainer = document.querySelector('#saved-palettes');
+var savedSectionMsg = document.querySelector('h4');
+var paletteSection = document.querySelector(".color-palettes");
 
 //Event Listeners:
 
 window.addEventListener('load', loadPage);
-
 newPaletteButton.addEventListener('click', populateNotLockedPalette);
-
-// savedPalettesContainer.addEventListener('click', deletePalette);
-
 savePaletteBtn.addEventListener('click', savePalettes);
 
-// savedPalettesContainer.addEventListener('click', deletePalette);
+savedPalettesContainer.addEventListener('click', function(event){
+  if (event.target.classList.contains('delete')) {
+  deletePalette(event)
+  }
+});
+
+
 
 boxContainer.addEventListener("click", function(event) {
+  // if (event.target.classList.contains('locked') || event.target.classList.contains('unlocked')) {
     toggleLocks(event)
-  changeIsLocked(event)
+    changeIsLocked(event)
+  // }
 });
 
 // eventHandlers & functions:
+
 function loadPage() {
   createNewPalette();
   changeBoxesColors();
@@ -97,22 +106,6 @@ function toggleLocks(event) {
     }
   };
 
-  var savedPalettes = [];
-  var savePaletteBtn = document.querySelector('#save-palette-button');
-  var savedPalettesContainer = document.querySelector('#saved-palettes');
-  var savedSectionMsg = document.querySelector('h4');
-  var paletteSection = document.querySelector(".color-palettes");
-
-  savePaletteBtn.addEventListener('click', savePalettes);
-
-  savedPalettesContainer.addEventListener('click', function(event){
-    if (event.target.classList.contains('delete')) {
-    deletePalette(event)
-    }
-  });
-
-
-
   function savePalettes() {
     var savedPalette = {
       box1: currentPalette[0],
@@ -149,12 +142,9 @@ function toggleLocks(event) {
 function deletePalette(event){
   var savedPaletteID = parseInt(event.target.closest('.mini-container').id)
   for (var i=0; i < savedPalettes.length; i++){
-    console.log('savedPalettes[i].id:', savedPalettes[i].id)
-    console.log('savedPalettes:', savedPalettes)
-    console.log('savedPaletteID:', savedPaletteID)
     if (savedPaletteID === savedPalettes[i].id) {
       savedPalettes.splice(i, 1)
-    } console.log(savedPalettes)
+    }
   }
   displaySavedPalettes()
 }  
