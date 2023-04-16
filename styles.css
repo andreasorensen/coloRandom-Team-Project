@@ -61,13 +61,11 @@ height: 20px;
 width:20px;
 padding-top: 80px;
 padding-left: 80px
-
 }
 
 .hidden{
     display: none;
 }
-
 
 .new-palette-button {
   margin: auto;
@@ -75,14 +73,14 @@ padding-left: 80px
   border-radius: 3px;
   color: white;
   border: none;
-  border-top-right-radius: 30px;
-  border-bottom-left-radius: 30px;
-  width: 150px;
-  height: 30px;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  width: 200px;
+  height: 40px;
   display: flex;
   justify-content: center; 
   align-items: center;
-  font-weight: 300;
+  font-weight: 200;
 };
 
 /* 
