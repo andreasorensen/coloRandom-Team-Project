@@ -104,7 +104,13 @@ function toggleLocks(event) {
   var paletteSection = document.querySelector(".color-palettes");
 
   savePaletteBtn.addEventListener('click', savePalettes);
-  savedPalettesContainer.addEventListener('click', deletePalette);
+
+  savedPalettesContainer.addEventListener('click', function(event){
+    if (event.target.classList.contains('delete')) {
+    deletePalette(event)
+    }
+  });
+
 
 
   function savePalettes() {
@@ -121,85 +127,37 @@ function toggleLocks(event) {
   };
 
   function displaySavedPalettes() {
-    savedSectionMsg.innerText = ''
-    // for (var i=0; i=savedPalettes.length; i++) {
-        savedPalettesContainer.innerHTML += `
-        <section class="mini-container">
-            <section class="mini-palette" style="background-color: ${currentPalette[0].hexcode}"></section>
-            <section class="mini-palette" style="background-color: ${currentPalette[1].hexcode}"></section>
-            <section class="mini-palette" style="background-color: ${currentPalette[2].hexcode}"></section>
-            <section class="mini-palette" style="background-color: ${currentPalette[3].hexcode}"></section>
-            <section class="mini-palette" style="background-color: ${currentPalette[4].hexcode}"></section>
-            <img class="delete" id="${currentPalette.id}" src="src/delete.png">
-        </section>
-        `
-    // }
+    if (!savedPalettes.length){
+      savedPalettesContainer.innerHTML = `<h4>No saved palettes yet!</h4>`;
+    } else { 
+      savedPalettesContainer.innerText = ''
+      for (var i=0; i<savedPalettes.length; i++){
+          savedPalettesContainer.innerHTML += `
+            <section class="mini-container" id=${savedPalettes[i].id}>
+                <section class="mini-palette" style="background-color: ${currentPalette[0].hexcode}"></section>
+                <section class="mini-palette" style="background-color: ${currentPalette[1].hexcode}"></section>
+                <section class="mini-palette" style="background-color: ${currentPalette[2].hexcode}"></section>
+                <section class="mini-palette" style="background-color: ${currentPalette[3].hexcode}"></section>
+                <section class="mini-palette" style="background-color: ${currentPalette[4].hexcode}"></section>
+                <img class="delete" src="src/delete.png" alt="delete-cross">
+            </section>
+            `
+      }
+    }
   };
 
 function deletePalette(event){
-  console.log('savedPalettes:', savedPalettes)
-  console.log('event.target.id:', parseInt(event.target.id))
-  // for (var i=0; i<savedPalettes.length; i++){
-    if (parseInt(event.target.id) === savedPalettes.id) {
+  var savedPaletteID = parseInt(event.target.closest('.mini-container').id)
+  for (var i=0; i < savedPalettes.length; i++){
+    console.log('savedPalettes[i].id:', savedPalettes[i].id)
+    console.log('savedPalettes:', savedPalettes)
+    console.log('savedPaletteID:', savedPaletteID)
+    if (savedPaletteID === savedPalettes[i].id) {
       savedPalettes.splice(i, 1)
-    }
-  // event.target.id is coming back as undefined
-  // (parseInt(event.target.id)) is coming back as NaN
-}
+    } console.log(savedPalettes)
+  }
+  displaySavedPalettes()
+}  
 
 
-  //id=${savedPalettes[i].id}
-
-
-  // function deletePalette(event) {
-  //   for (var i = 0; i < savedPalettes.length; i++){
-  //     console.log(savedPalettes[i])
-  //     if (event.target.id === savedPalettes[i].id) {
-  //       savedPalettes.splice(i, 1);
-  //     };
-  //   }
-  //   displaySavedPalettes()
-  // };
-
-
-  // function displaySavedPalettes() {
-  //   savedSectionMsg.innerText = ''
-  //   for (var i = 0; i < savedPalettes.length; i++) {
-  //       savedPalettesContainer.innerHTML += `
-  //       <section class="mini-container" id=${savedPalettes[i].id} >
-  //           <section class="mini-palette" style="background-color: ${savedPalettes[i].box1.hexcode}"></section>
-  //           <section class="mini-palette" style="background-color: ${savedPalettes[i].box2.hexcode}"></section>
-  //           <section class="mini-palette" style="background-color: ${savedPalettes[i].box3.hexcode}"></section>
-  //           <section class="mini-palette" style="background-color: ${savedPalettes[i].box4.hexcode}"></section>
-  //           <section class="mini-palette" style="background-color: ${savedPalettes[i].box5.hexcode}"></section>
-  //           <img class="delete" alt='deleteIcon' src="src/delete.png">
-  //       </section>
-  //       `
-  //       console.log(savedPalettes)
-  //   }
-  // };
-
-
-  // function deletePalette(event) {
-  //   var savedPaletteID = parseInt(event.target.closest('.mini-container').id);
-  //   for (var i = 0; i < savedPalettes.length; i++){
-  //     if (savedPaletteID === savedPalettes[i].id) {
-  //       savedPalettes.splice(i, 1);
-  //     };
-  //   } displaySavedPalettes()
-  // }; 
-  // why is savedPalettes array empty?
-
-
-
-
-
-  // target the saved palettes section
-  // we care about targetting the current index postion of our saved palettes array
-    // we need to give each saved palette a specific ID to target
-    // make an object with key value pair of ID when pushed into saved palette array
-      // how do we make ID? 
-      // how do we push our saved palette into that 
-
-  // line 114 -- current palette. id ???
-  
+// why is it repeating / adding more when I click the delete (only when there are more than one elements in the savedPalettes array)
