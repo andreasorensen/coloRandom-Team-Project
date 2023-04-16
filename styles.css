@@ -2,17 +2,10 @@ html {
     background: #E7F1F1;
     font-family: 'Poppins' , sans-serif;
 }
-
-html {
-    background: #E7F1F1;
-    font-family: 'Poppins' , sans-serif;
-}
-
 .home-view {
     float: left;
     padding-left: 175px
 }
-
 h1 {
     font-size: 60px;
     text-align: center;
@@ -20,7 +13,6 @@ h1 {
     padding-top:30px;
     font-weight:900;
 }
-
 .caption {
     display: flex;
     flex-direction: row;
@@ -31,37 +23,31 @@ h1 {
     margin-bottom: 30px;
     font-size: 15px;
 }
-
 .box-container {
     display:flex;
     flex-direction: row;
     justify-content: center;
     gap: 10px;
 }
-
 .boxes {
     border: 3px solid black;
 }
-
 #0 {
     width: 105px;
     height: 105px;
     background-color: #EA9999;
     caption-side: bottom
 }
-
 #1 {
     width: 105px;
     height: 105px;
     background-color: #FACB9C
 }
-
 #2 {
     width: 105px;
     height: 105px;
     background-color: #FFE59A
 }
-
 #3 {
     width: 105px;
     height: 105px;
@@ -70,21 +56,17 @@ h1 {
 #4 {
     width: 105px;
     height: 105px;
-    background-color: #a4c4ca
+    background-color: #A4C4CA
 }
-
-
-.box-container img{
-  height: 20px;
-  width:20px;
-  padding-top: 80px;
-  padding-left: 80px
+.boxes img{
+height: 20px;
+width:20px;
+padding-top: 80px;
+padding-left: 80px
 }
-
 .hidden{
     display: none;
 }
-
 .new-palette-button {
   margin: auto;
   background-color: black;
@@ -96,13 +78,12 @@ h1 {
   width: 150px;
   height: 30px;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   font-weight: 300;
   display: inline;
   margin-right: -40px
 }
-
 .save-palette-button {
     margin: auto;
     background-color: black;
@@ -114,28 +95,22 @@ h1 {
     width: 150px;
     height: 30px;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     font-weight: 300;
     display: inline;
-   
 }
-
 .button {
     display: flex;
-    
 }
-
 .new-palette-button:hover {
     background-color: darkgray;
     color: black;
 }
-
 .save-palette-button:hover {
     background-color: darkgray;
     color: black;
 }
-
 #saved-container {
     border-left: 5px solid black;
     height: 100%;
@@ -147,25 +122,15 @@ h1 {
     align-items: center;
     float: right
 }
-
-
 h3 {
     font-weight: 600;
     font-size: 40px;
     text-align: center;
     margin-top: 15%;
 }
-/* .h4 { 
+/* .h4 {
     display: none
 } */
-
-/* 
-.new-palette-button:hover {
-    background-color: darkgray;
-    color: black;
-  }
-   */
-
 #saved-palettes {
     font-family: 'Poppins', sans-serif;
     text-align: center;
@@ -177,42 +142,27 @@ h3 {
     align-items: center;
     margin-top: 30px;
 }
-
 .mini-container {
     display: flex;
     justify-content: center;
     align-items: center;
     max-width: 100%
 }
-
 .mini-palette {
     display: flex;
     height: 50px;
     width: 50px;
     margin: 5px;
     border: 3px solid black;
-
 }
-
 .delete {
     height: 30px;
     padding: 2%;
 }
-
 .delete:hover {
     height: 40px;
     padding: 1%;
 }
-
 .mini-container hidden{
     display: none;
 }
-/* lock {
-    height: 28px;
-    width: 28px;
-    background: transparent;
-    background-image: url("assets/locked.png");
-    background-size: cover;
-    border: none;
-    margin-bottom: 3px;
- } */
