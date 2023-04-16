@@ -27,8 +27,8 @@ var lockedIcons = document.querySelectorAll('.locked')
 
 window.addEventListener('load', loadPage);
 
-newPaletteButton.addEventListener('click', populateNotLockedPalette);
 
+newPaletteButton.addEventListener('click', populateNotLockedPalette);
 
 savePaletteBtn.addEventListener('click', savePalettes); //caught TypeError: Cannot read properties of null (reading 'addEventListener')
 
@@ -40,6 +40,7 @@ boxContainer.addEventListener("click", function(event) {
     toggleLocks(event)
   changeIsLocked(event)
 });
+
 
 // eventHandlers & functions: 
 
@@ -73,6 +74,7 @@ function createNewPalette() {
   } currentPalette = newPalette
 };
 
+
 function populateNotLockedPalette() {
   for (var i = 0; i < 5; i++) {
     if (!currentPalette[i].isLocked) {
@@ -80,13 +82,6 @@ function populateNotLockedPalette() {
     };
   };  changeBoxesColors();
 };
-
-function changeBoxesColors() {
-    for (var i = 0; i < currentPalette.length; i++) {
-        boxes[i].style.backgroundColor = currentPalette[i].hexcode;
-        hexCaption[i].innerText = currentPalette[i].hexcode
-    } 
-}
 
 function changeIsLocked(event) {
     var targetID = parseInt(event.target.closest("div").id);
@@ -98,24 +93,25 @@ function changeIsLocked(event) {
   }
 };
 
-function toggleLocks(event) {
-  
-    for (var i = 0; i < lockedIcons.length; i++) {    
-      if(event.target.id === lockedIcons[i].id || event.target.id === unlockedIcons[i].id) {
-        lockedIcons[i].classList.toggle('hidden')
-        unlockedIcons[i].classList.toggle('hidden')
-      }
-    }
-  }
+function changeBoxesColors() {
+    for (var i = 0; i < currentPalette.length; i++) {
+        boxes[i].style.backgroundColor = currentPalette[i].hexcode;
+        hexCaption[i].innerText = currentPalette[i].hexcode
+    } 
+}
 
-  function displayPalette() {
-    createNewPalette();
-  //  populateNotLockedPalette()
-    changeHexCodes();
-    changeColorBoxes();
-  }
+
+function toggleLocks(event) {
+  for (var i = 0; i < lockedIcons.length; i++) {    
+    if(event.target.id === lockedIcons[i].id || event.target.id === unlockedIcons[i].id) {
+      lockedIcons[i].classList.toggle('hidden')
+      unlockedIcons[i].classList.toggle('hidden')
+    }
+  } changeIsLocked()
+}
+
   
-  function savePalettes() {
+ function savePalettes() {
     // var savedPalettes = [];
     // for (var i = 0; i < currentPalette.length; i++) {
         savedPalettes.push(currentPalette);

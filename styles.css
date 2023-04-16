@@ -1,3 +1,7 @@
+html {
+    background: #E7F1F1;
+    font-family: 'Poppins' , sans-serif;
+}
 
 html {
     background: #E7F1F1;
@@ -28,13 +32,11 @@ h1 {
     font-size: 15px;
 }
 
-
 .box-container {
     display:flex;
     flex-direction: row;
     justify-content: center;
     gap: 10px;
-    
 }
 
 .boxes {
@@ -71,11 +73,12 @@ h1 {
     background-color: #a4c4ca
 }
 
-.boxes img{
-height: 20px;
-width:20px;
-padding-top: 80px;
-padding-left: 80px
+
+.box-container img{
+  height: 20px;
+  width:20px;
+  padding-top: 80px;
+  padding-left: 80px
 }
 
 .hidden{
@@ -156,7 +159,12 @@ h3 {
     display: none
 } */
 
-
+/* 
+.new-palette-button:hover {
+    background-color: darkgray;
+    color: black;
+  }
+   */
 
 #saved-palettes {
     font-family: 'Poppins', sans-serif;
