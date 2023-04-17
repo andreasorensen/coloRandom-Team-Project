@@ -17,15 +17,15 @@ If someone chooses to run this app. Plese follow the steps below:
 ![ezgif com-video-to-gif (2)](https://user-images.githubusercontent.com/125161431/232592215-ca2ed370-6cf9-46c9-910b-83fa8a1cdcd0.gif)
 
 
-
-### Context:
-[//]: <> (Give some context for the project here. How long did you have to work on it? How far into the Turing program are you?)
-
+https://andreasorensen.github.io/coloRandom-Team-Project/
 ### Contributors:
 [//]: <> (Who worked on this application? Link to their GitHubs.)
+https://github.com/Nathelene 
+https://github.com/andreasorensen
+https://github.com/Sulton88Mehron90
 
-### Learning Goals:
-[//]: <> (What were the learning goals of this project? What tech did you work with?)
+### Languages Used:
+- HTML
+- CSS
+- Javascript
 
-### Wins + Challenges:
-[//]: <> (What are 2-3 wins you have from this project? What were some challenges you faced - and how did you get over them?)
