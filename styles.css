@@ -2,16 +2,19 @@ html {
     background: #E7F1F1;
     font-family: 'Poppins' , sans-serif;
 }
+
 .home-view {
     float: left;
     padding-left: 175px
 }
+
 h1 {
     font-size: 60px;
     text-align: center;
     padding-top:30px;
     font-weight:900;
 }
+
 .caption {
     display: flex;
     flex-direction: row;
@@ -22,18 +25,21 @@ h1 {
     margin-bottom: 30px;
     font-size: 15px;
 }
+
 .box-container {
     display:flex;
     flex-direction: row;
     justify-content: center;
     gap: 10px;
 }
+
 .boxes {
     border: 3px solid black;
     width: 105px;
     height: 105px;
     caption-side: bottom;
 }
+
 #0 {
     background-color: #EA9999;
 }
@@ -54,9 +60,6 @@ h1 {
     background-color: #A4C4CA
 }
 
-/* .boxes img:hover {
-} */
-
 .boxes img {
     height: 20px;
     width:20px;
@@ -73,50 +76,43 @@ img:hover {
 }
 
 .new-palette-button {
-  margin: auto;
-  background-color: black;
-  border-radius: 3px;
-  color: white;
-  border: none;
-  border-top-right-radius: 30px;
-  border-bottom-left-radius: 30px;
-  width: 150px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 300;
-  display: inline;
-  margin-right: -40px
-}
+    margin-right: -40px
+  }
 
-.save-palette-button {
+.save-palette-button, .new-palette-button {
     margin: auto;
+    margin-top: 30px;
     background-color: black;
     border-radius: 3px;
     color: white;
     border: none;
-    border-top-right-radius: 30px;
-    border-bottom-left-radius: 30px;
-    width: 150px;
-    height: 30px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    width: 230px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: 300;
     display: inline;
+    font-size: 20px;
+    cursor: pointer;
 }
+
 .button {
     display: flex;
 }
+
 .new-palette-button:hover {
     background-color: darkgray;
     color: black;
 }
+
 .save-palette-button:hover {
     background-color: darkgray;
     color: black;
 }
+
 #saved-container {
     border-left: 5px solid black;
     height: 100%;
@@ -128,15 +124,14 @@ img:hover {
     align-items: center;
     float: right
 }
+
 h3 {
     font-weight: 600;
     font-size: 40px;
     text-align: center;
     margin-top: 15%;
 }
-/* .h4 {
-    display: none
-} */
+
 #saved-palettes {
     text-align: center;
     height: 100vh;
@@ -147,12 +142,14 @@ h3 {
     align-items: center;
     margin-top: 30px;
 }
+
 .mini-container {
     display: flex;
     justify-content: center;
     align-items: center;
     max-width: 100%
 }
+
 .mini-palette {
     display: flex;
     height: 50px;
@@ -160,14 +157,17 @@ h3 {
     margin: 5px;
     border: 3px solid black;
 }
+
 .delete {
     height: 30px;
     padding: 2%;
 }
+
 .delete:hover {
     height: 40px;
     padding: 1%;
 }
+
 .mini-container hidden{
     display: none;
 }
