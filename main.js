@@ -136,3 +136,4 @@ function deletePalette(event){
   }
   displaySavedPalettes()
 }  
+
