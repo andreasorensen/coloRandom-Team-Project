@@ -9,7 +9,6 @@ html {
 h1 {
     font-size: 60px;
     text-align: center;
-    font-family: 'Poppins' , sans-serif;
     padding-top:30px;
     font-weight:900;
 }
@@ -59,11 +58,14 @@ h1 {
 } */
 
 .boxes img {
-height: 20px;
-width:20px;
-padding-top: 80px;
-padding-left: 80px
+    height: 20px;
+    width:20px;
+    padding-top: 80px;
+    padding-left: 80px
+}
 
+img:hover {
+    cursor: pointer;
 }
 
 .hidden{
