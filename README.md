@@ -41,7 +41,9 @@ This project was created during our 4th week in Turing. It took about 7 days of 
 ### Wins + Challenges:
 Wins: 
 1. Worked together productivly, and made fast progress.
-2. All 3 of us had an understanding of the code and did successful troubleshooting together which helped to understand each others code even better. <b>
+2. All 3 of us had an understanding of the code and did successful troubleshooting together which helped to understand each others code even better.
+
+
 Challenges: 
 1. Working with CSS to acquire desired behavior/styling. 
 2. `toggleLocks` functionalyty and getting lock icon to change when a color is locked.
