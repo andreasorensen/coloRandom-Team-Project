@@ -2,13 +2,19 @@
 # ColoRandom- Group
 
 ### Abstract:
-[//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
+We built an app which displays a randomized palette of five colors. This app allows you to save you're favorite palettes to a saved palettes collection and delete palettes from you're saved collection as needed.
 
 ### Installation Instructions:
-[//]: <> (What steps does a person have to take to get your app cloned down and running?)
+If someone chooses to run this app. Plese follow the steps below:
+ - Fork this project to your own Github account
+ - Clone the repository to your local machine
+ - `cd` into the project
+ - Run the app from your VS code
+ - Or run `open index.html` to automatically open the site in your browser
 
 ### Preview of App:
-[//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
+
+
 
 ### Context:
 [//]: <> (Give some context for the project here. How long did you have to work on it? How far into the Turing program are you?)
