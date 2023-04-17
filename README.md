@@ -14,6 +14,8 @@ If someone chooses to run this app. Plese follow the steps below:
 
 ### Preview of App:
 
+![ezgif com-video-to-gif (2)](https://user-images.githubusercontent.com/125161431/232592215-ca2ed370-6cf9-46c9-910b-83fa8a1cdcd0.gif)
+
 
 
 ### Context:
