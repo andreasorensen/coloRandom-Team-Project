@@ -1,6 +1,5 @@
 // Variables:
 
-var randomHexCodes = [];
 var hexData = ["A", "B", "C", "D", "E", "F", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var currentPalette = [];
 var savedPalettes = [];
@@ -11,20 +10,14 @@ var hexCaption = document.querySelectorAll(".captions");
 var boxContainer = document.querySelector('.box-container');
 var savePaletteBtn = document.querySelector('#save-palette-button');
 var savedPalettesContainer = document.querySelector('#saved-palettes');
-var savedSectionMsg = document.querySelector('h4');
-var paletteSection = document.querySelector(".color-palettes");
 var unlockedIcons = document.querySelectorAll('.unlocked');
 var lockedIcons = document.querySelectorAll('.locked');
-var savedPalettes = [];
-var savePaletteBtn = document.querySelector('#save-palette-button');
-var savedPalettesContainer = document.querySelector('#saved-palettes');
-var savedSectionMsg = document.querySelector('h4');
-var paletteSection = document.querySelector(".color-palettes");
+
 
 //Event Listeners:
 
 window.addEventListener('load', loadPage);
-newPaletteButton.addEventListener('click', populateNotLockedPalette);
+newPaletteButton.addEventListener('click', changeNotLockedColors);
 savePaletteBtn.addEventListener('click', savePalettes);
 
 savedPalettesContainer.addEventListener('click', function(event){
@@ -42,7 +35,7 @@ boxContainer.addEventListener("click", function(event) {
 
 function loadPage() {
   createNewPalette();
-  changeBoxesColors();
+  changeBoxColors();
 };
 
 function createHexCode() {
@@ -69,15 +62,15 @@ function createNewPalette() {
   } currentPalette = newPalette
 };
 
-function populateNotLockedPalette() {
+function changeNotLockedColors() {
   for (var i = 0; i < 5; i++) {
     if (!currentPalette[i].isLocked) {
         currentPalette[i] = createColor();
     };
-  };  changeBoxesColors();
+  };  changeBoxColors();
 };
 
-function changeBoxesColors() {
+function changeBoxColors() {
     for (var i = 0; i < currentPalette.length; i++) {
         boxes[i].style.backgroundColor = currentPalette[i].hexcode;
         hexCaption[i].innerText = currentPalette[i].hexcode
