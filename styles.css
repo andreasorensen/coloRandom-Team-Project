@@ -59,10 +59,10 @@ h1 {
 } */
 
 .boxes img {
-height: 20px;
-width:20px;
-padding-top: 80px;
-padding-left: 80px
+    height: 20px;
+    width:20px;
+    padding-top: 80px;
+    padding-left: 80px
 
 }
 
@@ -70,22 +70,47 @@ padding-left: 80px
     display: none;
 }
 
+/* .new-palette-button, .save-palette-button {
+    margin: auto;
+    background-color: black;
+    border-radius: 3px;
+    color: white;
+    border: none;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    width: 250px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 300;
+    display: inline;
+    margin-right: -40px;
+    margin-top: 40px;
+    border-bottom-left-radius: 40px;
+    border-top-right-radius: 40px;
+    font-size: 25px;
+    cursor: pointer;
+} */
+
 .new-palette-button {
-  margin: auto;
-  background-color: black;
-  border-radius: 3px;
-  color: white;
-  border: none;
-  border-top-right-radius: 30px;
-  border-bottom-left-radius: 30px;
-  width: 150px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 300;
-  display: inline;
-  margin-right: -40px
+    margin:auto;
+    background-color: black;
+    border-radius: 3px;
+    color: white;
+    border: none;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    width: 170px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 100;
+    display: inline;
+    /* margin-right: -40px; */
+    font-size: 20px;
+    cursor: pointer;
 }
 
 .save-palette-button {
@@ -94,15 +119,17 @@ padding-left: 80px
     border-radius: 3px;
     color: white;
     border: none;
-    border-top-right-radius: 30px;
-    border-bottom-left-radius: 30px;
-    width: 150px;
-    height: 30px;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    width: 170px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 300;
+    font-weight: 100;
     display: inline;
+    font-size: 20px;
+    cursor: pointer;
 }
 .button {
     display: flex;
