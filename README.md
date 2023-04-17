@@ -36,7 +36,7 @@ This project was created during our 4th week in Turing. It took about 7 days of 
 - Write semantic HTML and efficient CSS to form a usable UI
 - Write clean JavaScript and leverage functions, creating and using an effective data model
 - Manipulate the page after it has loaded adding, removing, and updating elements on the DOM
-- RefineLearn and practice collaboration skills
+- Learn and practice collaboration skills
 
 ### Wins + Challenges:
 Challenges: 
