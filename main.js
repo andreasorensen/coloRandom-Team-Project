@@ -13,7 +13,6 @@ var savedPalettesContainer = document.querySelector('#saved-palettes');
 var unlockedIcons = document.querySelectorAll('.unlocked');
 var lockedIcons = document.querySelectorAll('.locked');
 
-
 //Event Listeners:
 
 window.addEventListener('load', loadPage);
@@ -97,11 +96,11 @@ function toggleLocks(event) {
 
   function savePalettes() {
     var savedPalette = {
-      box1: currentPalette[0],
-      box2: currentPalette[1],
-      box3: currentPalette[2],
-      box4: currentPalette[3],
-      box5: currentPalette[4],
+      color1: currentPalette[0],
+      color2: currentPalette[1],
+      color3: currentPalette[2],
+      color4: currentPalette[3],
+      color5: currentPalette[4],
       id: Math.floor(Math.random() * 1000)
      }; 
     savedPalettes.push(savedPalette);
@@ -116,11 +115,11 @@ function toggleLocks(event) {
       for (var i=0; i<savedPalettes.length; i++){
           savedPalettesContainer.innerHTML += `
             <section class="mini-container" id=${savedPalettes[i].id}>
-                <section class="mini-palette" style="background-color: ${savedPalettes[i].box1.hexcode}"></section>
-                <section class="mini-palette" style="background-color: ${savedPalettes[i].box2.hexcode}"></section>
-                <section class="mini-palette" style="background-color: ${savedPalettes[i].box3.hexcode}"></section>
-                <section class="mini-palette" style="background-color: ${savedPalettes[i].box4.hexcode}"></section>
-                <section class="mini-palette" style="background-color: ${savedPalettes[i].box5.hexcode}"></section>
+                <section class="mini-palette" style="background-color: ${savedPalettes[i].color1.hexcode}"></section>
+                <section class="mini-palette" style="background-color: ${savedPalettes[i].color2.hexcode}"></section>
+                <section class="mini-palette" style="background-color: ${savedPalettes[i].color3.hexcode}"></section>
+                <section class="mini-palette" style="background-color: ${savedPalettes[i].color4.hexcode}"></section>
+                <section class="mini-palette" style="background-color: ${savedPalettes[i].color5.hexcode}"></section>
                 <img class="delete" src="src/delete.png" alt="delete-cross">
             </section>
             `
