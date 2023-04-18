@@ -18,14 +18,34 @@ If someone chooses to run this app. Plese follow the steps below:
 
 
 https://andreasorensen.github.io/coloRandom-Team-Project/
-### Contributors:
-[//]: <> (Who worked on this application? Link to their GitHubs.)
-https://github.com/Nathelene 
-https://github.com/andreasorensen
-https://github.com/Sulton88Mehron90
+
+## Contributors:
+- [Andrea Sorensen](https://github.com/andreasorensen)<br>
+- [Natalie Baker](https://github.com/Nathelene)<br>
+- [Parvin Sattorova](https://github.com/Sulton88Mehron90)
+
+### Context:
+This project was created during our 4th week in Turing. It took about 7 days of group collaboration and some additional solo/paired sessions to implement the required functionality.
 
 ### Languages Used:
 - HTML
 - CSS
 - Javascript
+
+## Learning Goals:
+- Write semantic HTML and efficient CSS to form a usable UI
+- Write clean JavaScript and leverage functions, creating and using an effective data model
+- Manipulate the page after it has loaded adding, removing, and updating elements on the DOM
+- Learn and practice collaboration skills
+
+### Wins + Challenges:
+Wins: 
+1. Worked together productivly, and made fast progress.
+2. All 3 of us had an understanding of the code and did successful troubleshooting together which helped to understand each others code even better.
+
+
+Challenges: 
+1. Working with CSS to acquire desired behavior/styling. 
+2. `toggleLocks` functionalyty and getting lock icon to change when a color is locked.
+3. Resolving merge conflicts.
 
